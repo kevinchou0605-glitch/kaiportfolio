@@ -1,0 +1,277 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #202932;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar .logo { 
+  height: 80px; margin: 5px 10px; 
+}
+.navbar .nav-link { 
+  font-size: 1.15rem; 
+}
+.navbar .dropdown-menu { 
+  background-color: #585b72; 
+  border: none; 
+  min-width: auto; 
+  width: max-content; 
+}
+.navbar .dropdown-item { 
+  color: #fff; 
+}
+.navbar .dropdown-item:hover { 
+  background-color: #3a4554; 
+}
+
+/* 跑馬燈 */
+.carousel-item img { height: 560px; object-fit: cover; }
+
+
+section {
+  scroll-margin-top: 120px; /* 防止標題被nav擋住 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#about-section { 
+  padding-top: 30px; 
+}
+
+
+.section-main-title { /* 標題 */
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 30px; 
+}
+
+.category-subtitle { width: 100%; text-align: center; }
+
+.underlined-title { /* 小標 */
+  display: inline-block;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+
+
+
+
+.about-grid { /* 關於自己各區 */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.about-box {
+  background: #2a3440;
+  padding: 24px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.about-box:hover { 
+  background: #3a4554; 
+  transform: translateY(-6px); 
+}
+
+
+#specialty ul, #activities ul, #experience ul { 
+  list-style: none; 
+  padding-left: 0; 
+}
+
+/* cardss */
+.work-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2.5px solid rgba(255, 255, 255, 0.3) !important;
+  background: #ffffff;
+  color: #000000 !important;
+  overflow: hidden;
+}
+
+.work-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.work-card img { height: 250px; object-fit: cover; }
+
+.card-text {
+  margin: 0 !important;
+  line-height: 1.2;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* 小視窗 */ 
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup:target { display: flex; } /* 小視窗開關 */ 
+
+.popup-bg { 
+  position: absolute; 
+  inset: 0; 
+  background: rgba(0,0,0,0.85); 
+}
+
+.popup-content {
+  background: #fff;
+  color: #000;
+  padding: 40px;
+  max-width: 900px;
+  width: 90%;
+  border-radius: 12px;
+  position: relative;
+  z-index: 10000;
+}
+
+.popup-flex {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.popup-img { flex: 1.2; min-width: 300px; }
+.popup-img img { width: 100%; border-radius: 8px; }
+
+.popup-text { flex: 1; min-width: 300px; }
+.popup-text h4 { 
+  margin-bottom: 20px; 
+  border-bottom: 1px solid #ddd; 
+  padding-bottom: 10px; 
+}
+
+
+.totop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #151b20;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 999;
+}
+
+/* footer */
+.site-footer { 
+  background: #111; 
+  color: #aaa; 
+  padding: 30px 0; 
+  text-align: center; 
+}
+
+.site-footer .contact { 
+  display: flex; 
+  justify-content: center; 
+  gap: 40px; 
+}
+
+.site-footer .contact img { 
+  width: 28px; 
+  transition: transform 0.3s ease; 
+}
+
+.site-footer p { margin-top: 25px !important; }
+
+/* 響應式設計 */
+
+/* 小於 1200px  */
+@media (max-width: 1200px) {
+  .carousel-item img {
+    height: 480px;
+  }
+
+  .section-main-title {
+    font-size: 2.4rem;
+  }
+
+  .work-card img {
+    height: 200px;
+  }
+
+  .popup-content {
+    padding: 30px;
+  }
+}
+
+/* 小於 992px  */
+@media (max-width: 992px) {
+  .carousel-item img {
+    height: 400px;
+  }
+
+  .section-main-title {
+    font-size: 2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .popup-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .work-card img {
+    height: 180px;
+  }
+}
+
+/* 小於 768px  */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .section-main-title {
+    font-size: 1.8rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar .nav-link {
+    font-size: 1rem;
+  }
+
+  .work-card img {
+    height: 150px;
+  }
+}
+
+/* 小於 576px  */
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 200px;
+  }
+
+  .section-main-title {
+    font-size: 1.6rem;
+  }
+
+  .popup-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .totop {
+    padding: 10px 14px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
